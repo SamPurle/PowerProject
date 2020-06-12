@@ -8,15 +8,20 @@ categories: project upload
 ### Overview
 #### Motivation
 
-With the spare time I have as a result of the Covid-19 induced lockdown, I have been self-studying Python, data analysis, and Machine Learning. I have developed a number of Machine Learning models, primarily with pre-cleaned data and with a defined goal in mind such as the competitions found on [Kaggle](https://www.kaggle.com/). While building these models was useful to understand some core ML concepts and become familiar with Python syntax, I wanted a project with which I could set my own goals and identify a variety of uses for the underlying data. I also wanted to be genuinely interested in the subject matter, and decided upon Powerlifting as a perfect basis for my first self-directed project. The sport is rapidly growing (the dataset upon which I based this project contains 250,000 individual competitive performances), is exceptionally easy to quantify numerically, and quickly became my main hobby after leaving University.
+{:refdef: style="text-align: justify;"}
+
+
+With the spare time I have as a result of the Covid-19 induced lockdown, I have been self-studying Python, data analysis, and Machine Learning. I have developed a number of Machine Learning models, primarily with pre-cleaned data and with a defined goal in mind such as the competitions found on [Kaggle](https://www.kaggle.com/). While building these models was useful to understand some core ML concepts and become familiar with Python syntax, I wanted a project with which I could set my own goals and identify a variety of uses for the underlying data. I also wanted to be genuinely interested in the subject matter, and decided upon Powerlifting as a perfect basis for my first self-directed project. The sport is rapidly growing (the dataset upon which I based this project contains 250,000 individual competitive performances), is exceptionally easy to quantify numerically, and quickly became my primary hobby after leaving University.
+
+{: refdef}
 
 #### Project Scope
 
 For this project I wanted to make use of the [OpenPowerlifting](https://www.openpowerlifting.org/) dataset, for the purposes of Exploratory Data Analysis,
 rudimentary visualisations, and facilitate comparison between an individual's competitive performance and the wider Powerlifting community. Functionality that I have currently implemented includes:
 
- - **Visualisation:** Plotting trajectories of Total (a metric for absolute strength), Wilks (a metric for relative strength) and Bodyweight over the course of individuals' competitive careers
- - **Lift Analysis:** Allowing an individual to identify where their individual lifts stand relative to the wider community, both in terms of percentile and variation from the means
+ - **Visualisation:** Plotting trajectories of Total (a metric for absolute strength), Wilks score (a metric for relative strength) and Bodyweight over the course of individuals' competitive careers
+ - **Lift Analysis:** Allowing an individual to identify where their individual lifts stand relative to the wider community, both in terms of percentile and variation from the respective means
  - **Competition Classification:** Basic use of a Machine Learning Clustering model to classify competitions into Regional, National, and International meets
  - **Performance Prediction:** Allowing a user to determine their likely placing at an upcoming competition based on historical data, or retroactively assess the standard of competition at a past meets
 
@@ -43,8 +48,8 @@ After data cleaning and calculating the Elapsed Time since competitors' first Me
 
 The three metrics I wish to investigate are:
 
-- Total (a metric for Absolute Strength)
-- Wilks (a metric for Relative Strength)
+- Total - a metric for Absolute Strength
+- Wilks - a metric for Relative Strength
 - Bodyweight
 
 #### Total
@@ -62,7 +67,12 @@ A lifter's Total is generally their primary competitive goal - to lift the highe
 
 #### Wilks
 
-The Wilks score was developed as a method of comparing the relative strengths of lifters across multiple weight classes and genders. It is effectively a "power to weight ratio" used to score performance within competitive Powerlifting.
+The Wilks score was developed as a method of comparing the relative strengths of lifters across multiple weight classes and genders. It is effectively a "power to weight ratio" used to score performance within competitive Powerlifting. Although lean muscle mass is an enormous component in determining a lifter's ability to generate force, other factors also influence this:
+
+ - Muscle fibre diameter
+ - Actin : Myosin ratio within muscle fibres
+ - Motor Neuron Recruitment, which is heavily influenced by adrenaline
+ - Angle of interplay between tendons and attached bones (with can vary significantly as muscles grow throughout an athlete's career)
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/WilksPlot.png">
@@ -86,8 +96,7 @@ It is relatively commonplace for lifters to undertake the decision to move towar
 
 - Male lifters tend to put on 5-10kg of weight in their first 2-4 years of competing. Average body-weight in Men continues to increase after their Total plateaus, which explains Men's Wilks scores peaking much earlier than Women's.
 
-- Bodyweight of Female lifters doesn't really change over the course of their competitive careers, aside from a slight drop towards the end. Not a social scientist/psychologist but this could either be due to Women being more disciplined on average in terms of staying lean, or being less willing to put on weight to chase after a perceived competitive advantage.
-
+- Bodyweight of Female lifters doesn't change significantly over the course of their competitive careers, aside from a slight decrease towards the end. Although a social scientist would be better equipped to explain this, this could either be due to Women being more disciplined on average in terms of maintaining a low body fat percentage, or being less willing to put on weight to chase after a perceived competitive advantage.
 
 ### Lift Analysis
 #### Comparison with the wider community

@@ -7,8 +7,7 @@ Powerlifting - Main Script:
     
 """
 
-from subprocess import call
-from Cleaning import df
 
 
-print(df['Name'])
+
+
