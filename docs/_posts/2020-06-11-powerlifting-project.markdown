@@ -52,9 +52,9 @@ The three metrics I wish to investigate are:
 A lifter's Total is generally their primary competitive goal - to lift the highest combined total between their Squat, Bench Press and Deadlift.
 
 {:refdef: style="text-align: center;"}
-![Total](/assets/TotalPlot.png)
-{: refdef}
 <img src="{{site.url}}/{{site.baseurl}}/assets/TotalPlot.png">
+{: refdef}
+
 
 - Both sexes see a significant increase in Total over the first couple of years of competing. This plateaus in Men after ~2 years of competing, but continues to increase marginally in Women until ~6 years into competing. Both sexes see a significant drop in absolute strength after 8 years or more of competing, presumably as the effects of biological aging outpace the improvements made with increased training age.
 
@@ -65,7 +65,7 @@ A lifter's Total is generally their primary competitive goal - to lift the highe
 The Wilks score was developed as a method of comparing the relative strengths of lifters across multiple weight classes and genders. It is effectively a "power to weight ratio" used to score performance within competitive Powerlifting.
 
 {:refdef: style="text-align: center;"}
-![Wilks](/assets/WilksPlot.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/WilksPlot.png">
 {: refdef}
 
 
@@ -80,7 +80,7 @@ The fact the Women have a lower initial Wilks could be due to unfairly calculate
 It is relatively commonplace for lifters to undertake the decision to move towards higher weight classes as they progress in their lifting careers. This is in part a by-product of the natural propensity to gain muscle through resistance training, but also due to phenomenon that lifters will generally become more competitive as they gain body mass. An analysis of the biomechanics involved shows that - all other things being equal - taller lifters have to generate more force with a smaller mass of muscle to lift an equivalent weight as a shorter, stockier competitor.
 
 {:refdef: style="text-align: center;"}
-![Bodyweight](/assets/BodyweightPlot.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/BodyweightPlot.png">
 {: refdef}
 
 
@@ -97,25 +97,25 @@ The relative strengths of a individual's lifts have substantial implications on 
 Although similar tools currently exist online, these are of limited use for individuals interested in lifting competitively. A novice/intermediate Powerlifter will often be classified as having advanced/elite level strength by such tools.
 
 {:refdef: style="text-align: center;"}
-![Lifts](/assets/LiftPlot.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/LiftPlot.png">
 {: refdef}
 
 This overview can be further broken down by showing the distributions of each individual lift:
 
 {:refdef: style="text-align: center;"}
-![Lifts](/assets/SquatDist.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/SquatDist.png">
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Lifts](/assets/BenchDist.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/BenchDist.png">
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Lifts](/assets/DeadliftDist.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/DeeadliftDist.png">
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Lifts](/assets/TotalDist.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/TotalDist.png">
 {: refdef}
 
 
@@ -136,7 +136,7 @@ There is a high level of variation in the calibre of lifters seen at Competition
 In order to predict placing at an upcoming competition, it would be useful to be able to approximate the level of difficulty that is expected. Clearly a National level Meet with strict Qualifying Totals will see a higher standard of competitions than a Regional University Meet, where the majority of lifters are only just beginning their lifting careers and are likely to fall in the Junior and Sub-Junior age classes.
 
 {:refdef: style="text-align: center;"}
-![Classification](/assets/ClusterPlot.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/ClusterPlot.png">
 {: refdef}
 
 Currently this model is a proof-of-concept, and is not functional in a particularly meaningful way. I am relatively unfamiliar with using unlabelled data, and as such this is my first attempt at a clustering model. I considered approaching this problem by developing a Random Forest Classifier and providing a small list of labelled Competitions that could be extrapolated to the dataset as whole. However, my current plan is to think more carefully about parameter selection to be able to develop a clustering model with more distinct separation between competitions.
@@ -150,7 +150,7 @@ Even for lifters that enter competitions with their own self-determined goals ot
 To generate this distribution it was necessary to make use of the mathematical "choose" function in order to correctly calculate probability. There is only one way in which a competitor can place 1st - by beating every other competitor in their class. However, there are many different way in which a competitor could place 2nd - any one of the other competitors in their class could place higher than them.
 
 {:refdef: style="text-align: center;"}
-![Performance](/assets/PlacingPlot.png)
+<img src="{{site.url}}/{{site.baseurl}}/assets/PlacingPlot.png">
 {: refdef}
 
 The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. I plan to introduce functionality to allow input from site visitors.
