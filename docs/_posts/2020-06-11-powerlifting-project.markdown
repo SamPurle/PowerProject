@@ -8,12 +8,7 @@ categories: project upload
 ### Overview
 #### Motivation
 
-{:refdef: style="text-align: justify;"}
-
-
-With the spare time I have as a result of the Covid-19 induced lockdown, I have been self-studying Python, data analysis, and Machine Learning. I have developed a number of Machine Learning models, primarily with pre-cleaned data and with a defined goal in mind such as the competitions found on [Kaggle](https://www.kaggle.com/). While building these models was useful to understand some core ML concepts and become familiar with Python syntax, I wanted a project with which I could set my own goals and identify a variety of uses for the underlying data. I also wanted to be genuinely interested in the subject matter, and decided upon Powerlifting as a perfect basis for my first self-directed project. The sport is rapidly growing (the dataset upon which I based this project contains 250,000 individual competitive performances), is exceptionally easy to quantify numerically, and quickly became my primary hobby after leaving University.
-
-{: refdef}
+With the spare time I have available as a result of the Covid-19 induced lockdown, I have been self-studying Python, data analysis, and Machine Learning. I have developed a number of Machine Learning models, primarily with pre-cleaned data and with a defined goal in mind such as the competitions found on [Kaggle](https://www.kaggle.com/). While building these models was useful to understand some core ML concepts and become familiar with Python syntax, I wanted a project with which I could set my own goals and identify a variety of uses for the underlying data. I also wanted to be genuinely interested in the subject matter, and decided upon Powerlifting as a perfect basis for my first self-directed project. The sport is rapidly growing (the dataset upon which I based this project contains 250,000 individual competitive performances), is exceptionally easy to quantify numerically, and quickly became my primary hobby after leaving University.
 
 #### Project Scope
 
@@ -120,7 +115,7 @@ This overview can be further broken down by showing the distributions of each in
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-<img src="{{site.url}}/{{site.baseurl}}/assets/DeeadliftDist.png">
+<img src="{{site.url}}/{{site.baseurl}}/assets/DeadliftDist.png">
 {: refdef}
 
 {:refdef: style="text-align: center;"}
