@@ -12,15 +12,13 @@ Powerlifting - Growth Plot:
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import datetime
 
 # Load data
 
 from Cleaning import df
 
-DateData = df.groupby(['DateFirstMeet']).count()
+df['Year'] = pd.DatetimeIndex(df['DateFirstMeet']).year
 
-dfPlot = pd.DataFrame({'Date' : DateData.index,
-                        'Count' :DateData['Name']})
-
-GrowthPlot = sns.distplot(df['DateFirstMeet'])
-plt.show()
+dfPlot['Year'] = pd.DataFrame(df['Year'].unique())
+dfPlot['CompetitorCount'] = pd.groupby(df['Year']).count()[0]
