@@ -17,7 +17,7 @@ t1 = time.time()
 
 # Load data
 
-df = pd.read_csv('RawData.csv', low_memory = False)
+df = pd.read_csv('D:\Datasets\Powerlifting\RawData.csv', low_memory = False)
 
 # Filter for Raw, IPF, SBD
 
@@ -54,7 +54,7 @@ df.loc[:, 'WeightClassKg'] = df.loc[:, 'WeightClassKg'].astype(int)
 df = df.join(df.groupby(['Name'])['Date'].min(), how = 'left', on = (df['Name']), rsuffix = 'FirstMeet')
 df['ElapsedTime'] = df['Date'] - df['DateFirstMeet']
 
-df.to_csv('CleanedData.csv')
+df.to_csv('D:/Datasets/CleanedData.csv')
 
 #Calculate runtime
 
@@ -87,18 +87,23 @@ dfBin = pd.DataFrame(df.groupby(['Sex','YearBin']).Years.mean()).reset_index()
 dfBin['Wilks'] = df.groupby(['Sex','YearBin']).Wilks.mean().values
 WilksPlot = sns.relplot(x = 'Years', y = 'Wilks', hue = 'Sex', style= 'Sex', data = dfBin)
 plt.title('Plot showing Wilks against Years Competing')
+plt.savefig('docs/assets/WilksPlot.png', bbox_inches = 'tight')
 plt.show()
+
 
 dfBin['Total'] = df.groupby(['Sex','YearBin']).TotalKg.mean().values
 TotalPlot = sns.relplot(x = 'Years', y = 'Total', hue = 'Sex', style= 'Sex', data = dfBin)
 plt.title('Plot Showing Total against Years Competing')
+plt.savefig('docs/assets/TotalPlot.png', bbox_inches = 'tight')
 plt.show()
 
 dfBin['Bodyweight'] = df.groupby(['Sex','YearBin']).BodyweightKg.mean().values
 BodyweightPlot = sns.relplot(x = 'Years', y = 'Bodyweight', hue = 'Sex', style= 'Sex', data = dfBin)
 plt.title('Plot showing Bodyweight against Years Competing')
+plt.savefig('docs/assets/BodyweightPlot.png', bbox_inches = 'tight')
 plt.show()
-BodyweightPlot.savefig('Page/assets/BodyweightPlot.png')
+
+
 
 # Calculate runtime
 
@@ -175,6 +180,7 @@ for l in Lifts:
     plt.xlabel('{} (kg)'.format(l))
     plt.ylabel('Frequency')
     plt.title('Plot showing your {} relative to other lifters in your class'.format(l))
+    plt.savefig('docs/assets/{}Dist.png'.format(l))
     plt.show()
     
 # Plot relative strengths
@@ -183,6 +189,7 @@ LiftPlot = sns.barplot(x = 'Lift', y = 'Difference', data = ComparisonDf)
 vals = LiftPlot.get_yticks()
 LiftPlot.set_yticklabels(['{:,.0%}'.format(x) for x in vals])
 plt.title('Relative Strengths of your lifts')
+plt.savefig('docs/assets/LiftPlot.png')
 plt.show()
 
 # Calculate runtime
@@ -240,6 +247,7 @@ sns.relplot(x = 'MaxWilks', y = 'MedianWilks', hue = 'Meet Level', data = dfMeet
 plt.title('Clustering of Competitions')
 plt.xlabel('Maximum Wilks score')
 plt.ylabel('Median Wilks score')
+plt.savefig('docs/assets/ClusterPlot.png', bbox_inches = 'tight')
 plt.show()
 
 # Join to existing data
@@ -295,6 +303,7 @@ plt.title('Plot showing the probability distribution of your meet performance')
 vals = PlacingPlot.get_yticks()
 PlacingPlot.set_yticklabels(['{:,.0%}'.format(x) for x in vals])
 PlacingPlot.text(0.75,0.75,'{}\n{}kg Bodyweight\n{}kg Total\n{} Competitors \n{} level'.format(UserSex, UserBodyweight, UserTotal, Competitors, MeetLevel), transform = PlacingPlot.transAxes)
+plt.savefig('docs/assets/PlacingPlot.png')
 plt.show()
 
 t6 = time.time()

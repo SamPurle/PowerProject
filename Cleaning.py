@@ -50,4 +50,4 @@ df.loc[:, 'WeightClassKg'] = df.loc[:, 'WeightClassKg'].astype(int)
 df = df.join(df.groupby(['Name'])['Date'].min(), how = 'left', on = (df['Name']), rsuffix = 'FirstMeet')
 df['ElapsedTime'] = df['Date'] - df['DateFirstMeet']
 
-df.to_csv('CleanedData.csv')
+df.to_csv('D:/Datasets/CleanedData.csv')
