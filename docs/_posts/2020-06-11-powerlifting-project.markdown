@@ -52,7 +52,7 @@ The three metrics I wish to investigate are:
 A lifter's Total is generally their primary competitive goal - to lift the highest combined total between their Squat, Bench Press and Deadlift.
 
 {:refdef: style="text-align: center;"}
-![Total](/assets/TotalPlot.png)
+![Total](./assets/TotalPlot.png)
 {: refdef}
 
 
@@ -136,7 +136,7 @@ There is a high level of variation in the calibre of lifters seen at Competition
 In order to predict placing at an upcoming competition, it would be useful to be able to approximate the level of difficulty that is expected. Clearly a National level Meet with strict Qualifying Totals will see a higher standard of competitions than a Regional University Meet, where the majority of lifters are only just beginning their lifting careers and are likely to fall in the Junior and Sub-Junior age classes.
 
 {:refdef: style="text-align: center;"}
-![Classification](assets/ClusterPlot.png)
+![Classification](/assets/ClusterPlot.png)
 {: refdef}
 
 Currently this model is a proof-of-concept, and is not functional in a particularly meaningful way. I am relatively unfamiliar with using unlabelled data, and as such this is my first attempt at a clustering model. I considered approaching this problem by developing a Random Forest Classifier and providing a small list of labelled Competitions that could be extrapolated to the dataset as whole. However, my current plan is to think more carefully about parameter selection to be able to develop a clustering model with more distinct separation between competitions.
