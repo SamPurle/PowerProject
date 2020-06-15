@@ -32,10 +32,10 @@ dfYear['Cumulative'] = dfYear['Name'].cumsum()
 
 sns.relplot(x = 'Year', y = 'Cumulative', data = dfYear, kind = 'line')
 
-MINYEAR = 2000 # Specify the starting year for the plot
+MIN_YEAR = 2000 # Specify the starting year for the plot
 X_TICK_FREQ = 5 # Specify the tick frequency on the x-axis
-plt.xlim(MINYEAR,)
-plt.xticks(np.arange(MINYEAR, dfYear['Year'].max() + X_TICK_FREQ, X_TICK_FREQ))
+plt.xlim(MIN_YEAR,)
+plt.xticks(np.arange(MIN_YEAR, dfYear['Year'].max() + X_TICK_FREQ, X_TICK_FREQ))
 
 Y_TICK_FREQ = 50000 # Specify the tick frequeency on the y-axis
 MAXCOMP = 250000 # Specify the maximum number of comppetitors for the plot to show

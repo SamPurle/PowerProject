@@ -29,6 +29,8 @@ Functionality that I wish to implement in the future includes:
  - Demonstrate and model the rapid growth of the sport
  - Do competitors tend to favour different lifts throughout their careers?
 
+ Each heading contains a hyperlink to the underlying Python code, viewable on Github.
+
 ### Data Cleaning
 
 The OpenPowerlifting dataset is community-maintained, with a variety of different managers that are responsible for uploading competition data from many different federations as they occur across 65 different countries. It appears the site utilises a relational database at the back-end, as individual competitors are able to link a variety of different Social Media accounts to their competitive profiles, which in turn are tied to Meets in which they have competed. This infrastructure is not available to site visitors however, and the raw data is available as a simple '.csv' file.
@@ -36,6 +38,13 @@ The OpenPowerlifting dataset is community-maintained, with a variety of differen
 The presence of many different federations within the raw data has the consequence that competitors do not have a Unique ID tied to them, and can only be identified by name. As such, detection of individual competitors is entirely dependent on the name they elected to use while entering any given competition. As an example of this I appear as two distinct competitors within the dataset: as Samuel Purle on 2019-04-06, and then as Sam Purle on 2020-01-26. This will introduce a degree of noise into the raw data, the removal of which I do not believe to be possible without the use of extensive and complex string operations. Even subsequent to this, the issue would not be entirely alleviated due to the presence of competitors from many different countries and cultures within the data - where naming conventions differ substantially from those in the West.
 
 ### [Growth of the sport](https://github.com/SamPurle/PowerProject/blob/master/GrowthModelling.py)
+
+Powerlifting as a sport has experienced rapid growth over recent years. There are likely a multitude of reasons for this. One of which has been the growing popularity of "Raw" lifting as opposed to the original "Equipped" lifting, which has resulted in the sport becoming more accessible to the gym-going population. Additionally, health and fitness has become a prominent subjeect on a variety of social media platforms (most notably Instagram and YouTube), which has resulted in greater awareness of the sport.
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/SportGrowth.png">
+{: refdef}
+
 ### Visualisation
 #### Showing trends in the general Powerlifting population
 
