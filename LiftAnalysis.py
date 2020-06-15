@@ -13,6 +13,8 @@ import math
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+sns.set_style('darkgrid')
+
 #Load data
 
 df = pd.read_csv('D:/Datasets/Powerlifting/CleanedData.csv')

@@ -14,6 +14,8 @@ from sklearn.cluster import KMeans
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+sns.set_style('darkgrid')
+
 # Load data
 
 from Cleaning import df

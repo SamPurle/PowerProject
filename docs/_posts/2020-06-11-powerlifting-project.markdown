@@ -104,7 +104,7 @@ It is relatively commonplace for lifters to undertake the decision to move towar
 
 - Bodyweight of Female lifters doesn't change significantly over the course of their competitive careers, aside from a slight decrease towards the end. Although a social scientist would be better equipped to explain this, this could either be due to Women being more disciplined on average in terms of maintaining a low body fat percentage, or being less willing to put on weight to chase after a perceived competitive advantage.
 
-### Lift Analysis
+### [Lift Analysis](https://github.com/SamPurle/PowerProject/blob/master/LiftAnalysis.py)
 #### Comparison with the wider community
 
 The relative strengths of a individual's lifts have substantial implications on way they will approach a competitive situation, as well as providing insight on areas on which to focus training and potentially review technique. Biomechanics and a lifter's bodily proportions play a significant role in determining which lifts an individual will naturally favour, and it is somewhat rare for an individual to be equally strong in all three lifts relative to the general Powerlifting population.

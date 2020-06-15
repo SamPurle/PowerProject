@@ -28,8 +28,9 @@ dfYear = pd.DataFrame(df.groupby(['YearFirstMeet']).Name.count())
 dfYear['Year'] = dfYear.index
 dfYear['Cumulative'] = dfYear['Name'].cumsum()
 
-# Plot and savee data
+# Plot and save data
 
+sns.set_style('darkgrid')
 sns.relplot(x = 'Year', y = 'Cumulative', data = dfYear, kind = 'line')
 
 MIN_YEAR = 2000 # Specify the starting year for the plot
