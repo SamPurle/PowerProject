@@ -2,61 +2,66 @@
 
 Powerlifting - Clustering Model:
     
-    A machine learning model to cluster meet data into regional, national and 
-    international meets to improve predictions of competitive performance.
+    A Machine Learning Clustering model to classify competitions into different tiers of difficulty,
+    with a view to providing better performance predictions. 
     
 """
 
 # Import libraries
 
-import pandas as pd 
-import time
+import pandas as pd
 from sklearn.cluster import KMeans
-import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
-
-t0 = time.time()
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
 
 # Load data
 
-df = pd.read_csv('CleanedData.csv', index_col = 'Unnamed: 0')
-dfMeet = pd.DataFrame({'MeetName' : df['MeetName'].unique()})
-dfMeet['MedianWilks'] = pd.DataFrame(df.groupby(['MeetName']).Wilks.median().values)
-dfMeet['MeanWilks'] = pd.DataFrame(df.groupby(['MeetName']).Wilks.mean().values)
-dfMeet['CompetitorCount'] = pd.DataFrame(df.groupby(['MeetName']).Name.count().values)
-dfMeet['MaxWilks'] = pd.DataFrame(df.groupby(['MeetName']).Wilks.max().values)
+from Cleaning import df
 
-x1 = dfMeet['MedianWilks'].values
-x2 = dfMeet['MeanWilks'].values
+df = df.join(df.groupby(['Name']).MeetCountry.agg(pd.Series.nunique), on = 'Name', 
+             how = 'left', rsuffix = 'Count') 
 
+df = df.join(df.groupby('Name').MeetCountry.agg(pd.Series.mode), on = 'Name', 
+             how = 'left', rsuffix = 'Mode')
+df['Nationality'] = df['MeetCountryMode'].str[0]
+df['Nationality'].replace(to_replace = {'England' : 'UK', 
+                                        'Wales' : 'UK',
+                                        'Scotland' : 'UK'}, inplace = True)
+df.loc[df['Nationality'].str.len() > 1, 'MeetCountryMode'] = df['Nationality']
 
-x = dfMeet[['MedianWilks','MaxWilks']]
-
-k_means = KMeans(n_clusters = 3, random_state = 42)
-y = k_means.fit_predict(x)
-
+df['ElapsedTime'] = df['ElapsedTime'].dt.days
 
 
-dfMeet['Meet Level'] = pd.DataFrame(y)
-dfMeet['Meet Level'].replace(to_replace = [0, 1, 2], value = ['National', 'Regional', 'International'],
-                                                              inplace = True)
+dfMeet = pd.DataFrame({'CompetitorCount' : df.groupby(['MeetName']).Name.count(),
+                       'MedianWilks' : df.groupby(['MeetName']).Wilks.median(),
+                       'MaxWilks' : df.groupby(['MeetName']).Wilks.max(),
+                       'MeanCountries' : df.groupby(['MeetName']).MeetCountryCount.mean(),
+                      'NationalityCount' : df.groupby(['MeetName']).MeetCountryMode.agg(pd.Series.nunique),
+                      'MeanTrainingAge' : df.groupby(['MeetName']).ElapsedTime.mean()                      
+                        })
 
-distortions = []
-for i in range(1, 11):
-    km = KMeans(
-        n_clusters=i, init='random',
-        n_init=10, max_iter=300,
-        tol=1e-04, random_state=42
-    )
-    km.fit(x)
-    distortions.append(km.inertia_)
-    
-# Plot clusters
+xFeatures = ['MedianWilks', 'NationalityCount','MeanTrainingAge']
+x = dfMeet[xFeatures]
 
-sns.relplot(x = 'MaxWilks', y = 'MedianWilks', hue = 'Meet Level', data = dfMeet)
-plt.title('Clustering of Competitions')
-plt.xlabel('Maximum Wilks score')
-plt.ylabel('Median Wilks score')
+Model = KMeans(n_clusters = 3, random_state = 42, n_jobs = 3).fit(x)
+y = Model.labels_
+
+dfMeet['MeetLevel'] = y
+dfMeet['MeetLevel'].replace({0 : 'Beginner',
+                             1: 'Intermediate',
+                             2: 'Advanced'}, inplace = True)
+
+ClusterPlot = sns.relplot(x = 'MedianWilks', y = 'NationalityCount', 
+                          hue = 'MeetLevel', style = 'MeetLevel', data = dfMeet)
 plt.show()
+
+Fig3D = plt.figure()
+ax = Fig3D.add_subplot(111, projection='3d')
+ax.scatter3D(dfMeet['MedianWilks'], dfMeet['NationalityCount'], dfMeet['MeanTrainingAge'])
+plt.show()
+
+
+
+
 
