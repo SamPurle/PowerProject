@@ -37,6 +37,7 @@ MaleWeightClasses = [20,53, 59, 66, 74, 83, 93, 105, 120,
 FemaleWeightClasses = [20, 43, 47, 52, 57, 63, 72, 84, 
                        math.ceil(df.loc[df['Sex'] == 'F', ['BodyweightKg']].max())]
 
+global WCDict
 WCDict = {'M' : MaleWeightClasses, 'F' : FemaleWeightClasses}
 
 for s in df.Sex.unique():
@@ -48,6 +49,6 @@ df.loc[:, 'WeightClassKg'] = df.loc[:, 'WeightClassKg'].astype(int)
 # Calculate elapsed time since first meet
 
 df = df.join(df.groupby(['Name'])['Date'].min(), how = 'left', on = (df['Name']), rsuffix = 'FirstMeet')
-df['ElapsedTime'] = df['Date'] - df['DateFirstMeet']
+df['ElapsedDays'] = (df['Date'] - df['DateFirstMeet']).dt.days
 
 df.to_csv('D:/Datasets/Powerlifting/CleanedData.csv')

@@ -6,68 +6,45 @@ Powerlifting - Performance Predictor:
     
 """
 
-# Import libraries
+#Import libraries
 
-import pandas as pd
-import seaborn as sns
-import math
 import numpy as np
+import pandas as pd
+import math
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load data
 
-df = pd.read_csv('TimeData.csv')
+df = pd.read_csv('D:/Datasets/Powerlifting/CleanedData.csv')
 
-# Recieve inputs
 
-sex = 'M'
-bw = [74]
-tot = 520
-Competitors = 20
-
-# Clean weight classes
-
-MaleWc = [20,53, 59, 66, 74, 83, 93, 105, 120, 260]
-FemaleWc = [20, 43, 47, 52, 57, 63, 72, 84, 260]
-
-if sex == 'M':
-    WC = MaleWc
-    
-if sex == 'F':
-    WC = FemaleWc
-
-lab = [53, 59, 66, 74, 83, 93, 105, 120, 'SHW']
-
-df['WC'] = pd.cut(df['BodyweightKg'], MaleWc, labels = lab)
-df = df[df.loc[:,'Sex'] == sex]
-
-# Filter by weightclass
-
-wc = pd.cut(bw, MaleWc, labels = lab)    
-df = df[df.loc[:,'WC'] == wc[0]]
-
-CountTotal = len(df)
-CountLower = df[df['TotalKg'] < tot]['CompetitorId'].count()
-CountHigher = df[df['TotalKg'] > tot]['CompetitorId'].count()
+LevelMatches = df[(df['Sex'] == UserSex) & (df['WeightClassKg'] == UserWeightClass)
+                  & (df['Meet Level'] == MeetLevel)]
 
 # Calculate statistics
 
+CountLower = LevelMatches[LevelMatches['TotalKg'] < UserTotal].Name.count()
+CountTotal = len(LevelMatches)
 Per = CountLower / CountTotal
 
 def nCr(n,r):
     f = math.factorial
     return f(n) / f(r) / f(n-r)
 
-dfRank = pd.DataFrame(np.linspace(1, Competitors, Competitors))
-dfRank.columns = ['Rank']
-dfRank['Rank'] = dfRank['Rank'].astype(int)
-dfRank['NumHigher'] = dfRank['Rank'] - 1
-dfRank['NumLower'] = Competitors - dfRank['Rank']
+dfRank = pd.DataFrame({'Rank' : np.linspace(1, Competitors, Competitors)}).astype(int)
 
-for l in range(0,Competitors):
-    dfRank.loc[l,'Choose'] = nCr(Competitors - 1, dfRank.loc[l,'NumLower'])
-dfRank['Prob'] = dfRank['Choose'] * (Per ** dfRank['NumLower']) * ((1 - Per) ** dfRank['NumHigher'])
-dfRank['Per'] = dfRank['Prob'] * 100
+for r in dfRank['Rank']:
+    dfRank.loc[r-1,'Choose'] = nCr(Competitors, r - 1)
+    dfRank.loc[r-1, 'Probability'] = dfRank.loc[r-1, 'Choose'] * (Per ** (Competitors - r)) * ((1 - Per) ** (r - 1))
+    
+PlacingPlot = sns.barplot(x = 'Rank', y = 'Probability', data = dfRank)
+plt.title('Plot showing the probability distribution of your meet performance')
+vals = PlacingPlot.get_yticks()
+PlacingPlot.set_yticklabels(['{:,.0%}'.format(x) for x in vals])
+PlacingPlot.text(0.75,0.75,'{}\n{}kg Bodyweight\n{}kg Total\n{} Competitors \n{} level'.format(UserSex, UserBodyweight, UserTotal, Competitors, MeetLevel), transform = PlacingPlot.transAxes)
+plt.savefig('docs/assets/PlacingPlot.png')
+plt.show()
 
 MaxProb = dfRank.loc[:,'Prob'].max()
 MaxRow = dfRank[dfRank.loc[:,'Prob'] == MaxProb]
@@ -81,7 +58,8 @@ sns.set_style('darkgrid')
 ProbPlot = sns.barplot(x = 'Rank', y = 'Per', data = dfRank)
 plt.title('Probability distribution of placing at competition')
 plt.ylabel('Percentage likelihood')
-ProbPlot.text(0,15,'{}\n{}kg Bodyweight\n{}kg Total\n{} Competitors '.format(sex, bw[0], tot, Competitors))
+ProbPlot.text(0,15,'{}\n{}kg Bodyweight\n{}kg Total\n{} Competitors '.format(
+    UserSex, UserBodyweight, UserTotal, Competitors))
 
 
 
