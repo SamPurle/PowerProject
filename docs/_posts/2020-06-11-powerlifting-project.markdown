@@ -31,7 +31,7 @@ Functionality that I wish to implement in the future includes:
 
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
 
-### Data Cleaning
+### [Data Cleaning](https://github.com/SamPurle/PowerProject/blob/master/Cleaning.py)
 
 The OpenPowerlifting dataset is community-maintained, with a variety of different managers that are responsible for uploading competition data from many different federations as they occur across 65 different countries. It appears the site utilises a relational database at the back-end, as individual competitors are able to link a variety of different Social Media accounts to their competitive profiles, which in turn are tied to Meets in which they have competed. This infrastructure is not available to site visitors however, and the raw data is available as a simple '.csv' file.
 
@@ -44,6 +44,8 @@ Powerlifting as a sport has experienced rapid growth over recent years. There ar
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/SportGrowth.png">
 {: refdef}
+
+It will be intesting to see the impact which the Covid-19 pandemic has upon the influx of new competitors to thee sport.
 
 ### Visualisation
 #### Showing trends in the general Powerlifting population
@@ -141,7 +143,7 @@ Despite substantial effort on my part, my Bench Press continues to be a competit
 
 My Deadlift is marginally stronger than other competitive lifters in my weight class. I believe the lower body strength that provides the foundation for my Squat to be the primary reason for this. Moving forwards, I plan to capitalise on this strength by continuing to develop my "Sumo" Deadlift technique - which differs substantially from my current "Conventional" technique and relies on many of the same muscle groups as the Squat.
 
-### Clustering
+### [Clustering](https://github.com/SamPurle/PowerProject/blob/master/ClusteringModel.py)
 #### A Machine Learning model to classify Competitions
 
 There is a high level of variation in the calibre of lifters seen at Competitions, between federations, countries, and even between weight classes - such as the infamously "stacked" 83kg IPF class where a large number of Men fall due to the natural size of their frames.

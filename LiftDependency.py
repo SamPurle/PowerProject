@@ -9,7 +9,6 @@ Powerlifting - Lift Dependency:
 # Import libraries and modules
 
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load data

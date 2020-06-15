@@ -12,7 +12,6 @@ Powerlifting - Clustering Model:
 import pandas as pd
 from sklearn.cluster import KMeans
 import seaborn as sns
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
 # Load data
@@ -55,13 +54,3 @@ dfMeet['MeetLevel'].replace({0 : 'Beginner',
 ClusterPlot = sns.relplot(x = 'MedianWilks', y = 'NationalityCount', 
                           hue = 'MeetLevel', style = 'MeetLevel', data = dfMeet)
 plt.show()
-
-Fig3D = plt.figure()
-ax = Fig3D.add_subplot(111, projection='3d')
-ax.scatter3D(dfMeet['MedianWilks'], dfMeet['NationalityCount'], dfMeet['MeanTrainingAge'])
-plt.show()
-
-
-
-
-

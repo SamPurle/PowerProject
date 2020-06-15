@@ -1,60 +1,17 @@
-"""
-
-1. Powerlifting - Data Preparation:
-    
-    Clean the Raw data into a usable format, and calculate each competitor's 
-    elapsed time since their first registered competition
-    
-"""
-
-# Import libraries
-
-import pandas as pd
+from os import system
 import time
-import math
 
 t1 = time.time()
 
-# Load data
+"""
 
-df = pd.read_csv('D:\Datasets\Powerlifting\RawData.csv', low_memory = False)
+Powerlifting - Data Cleaning:
+    
+    A script to output the raw .csv file into a usable format
+    
+"""
 
-# Filter for Raw, IPF, SBD
-
-df = df.loc[(df['Equipment'] == 'Raw') & (df['Event'] == 'SBD') & (df['ParentFederation'] == 'IPF')]
-
-# Convert Place to integer
-
-df = df[(df.Place != 'DQ') & (df.Place != 'G') & (df.Place != 'DD') & (df.Place != 'NS')]
-df.loc[:,'Place'] = df.Place.astype(int)
-
-# Convert Date to datetime format
-
-df.loc[:,'Date'] = pd.to_datetime(df.Date)
-
-# Convert Weight Class to integer
-
-df = df[df.loc[:,'BodyweightKg'].notnull()]
-
-MaleWeightClasses = [20,53, 59, 66, 74, 83, 93, 105, 120, 
-                     math.ceil(df.loc[df['Sex'] == 'M', ['BodyweightKg']].max())]
-FemaleWeightClasses = [20, 43, 47, 52, 57, 63, 72, 84, 
-                       math.ceil(df.loc[df['Sex'] == 'F', ['BodyweightKg']].max())]
-
-WCDict = {'M' : MaleWeightClasses, 'F' : FemaleWeightClasses}
-
-for s in df.Sex.unique():
-    df.loc[df['Sex'] == s, ['WeightClassKg']] = pd.cut(df[df.loc[:,'Sex'] == s]['BodyweightKg'], 
-                                    bins = WCDict[s], labels = WCDict[s][1:])
-
-df.loc[:, 'WeightClassKg'] = df.loc[:, 'WeightClassKg'].astype(int)
-
-# Calculate elapsed time since first meet
-
-df = df.join(df.groupby(['Name'])['Date'].min(), how = 'left', on = (df['Name']), rsuffix = 'FirstMeet')
-df['ElapsedTime'] = df['Date'] - df['DateFirstMeet']
-
-df.to_csv('D:/Datasets/CleanedData.csv')
+system('python Cleaning.py')
 
 #Calculate runtime
 
@@ -71,13 +28,19 @@ print('The runtime for Data Preparation was {:.1f} seconds'.format(t2 - t1))
 
 # Import libraries
 
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 sns.set_style('darkgrid')
 
+# Load data
+
+df = pd.read_csv('D:/Datasets/Powerlifting/CleanedData.csv')
+
 # Bin data for plotting
 
+df['ElapsedTime'] = pd.to_datetime(df['ElapsedTime'])
 df['Years'] = df['ElapsedTime'].dt.days / 365
 df['YearBin'] = pd.qcut(df['Years'], 250, labels = False, duplicates= 'drop')
 
