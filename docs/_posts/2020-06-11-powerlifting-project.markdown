@@ -39,7 +39,7 @@ The presence of many different federations within the raw data has the consequen
 
 ### [Growth of the sport](https://github.com/SamPurle/PowerProject/blob/master/GrowthModelling.py)
 
-Powerlifting as a sport has experienced rapid growth over recent years. There are likely a multitude of reasons for this. One of which has been the growing popularity of "Raw" lifting as opposed to the original "Equipped" lifting, which has resulted in the sport becoming more accessible to the gym-going population. Additionally, health and fitness has become a prominent subjeect on a variety of social media platforms (most notably Instagram and YouTube), which has resulted in greater awareness of the sport.
+Powerlifting as a sport has experienced rapid growth over recent years. There are likely a multitude of reasons for this. One of which has been the growing popularity of "Raw" lifting as opposed to the original "Equipped" lifting, which has resulted in the sport becoming more accessible to the gym-going population. Additionally, health and fitness has become a prominent subject on a variety of social media platforms (most notably Instagram and YouTube), which has resulted in greater awareness of the sport.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/SportGrowth.png">
@@ -47,8 +47,7 @@ Powerlifting as a sport has experienced rapid growth over recent years. There ar
 
 It will be intesting to see the impact which the Covid-19 pandemic has upon the influx of new competitors to thee sport.
 
-### [Visualisation](https://github.com/SamPurle/Powerlifting/blob/master/Plotting.py)
-#### Showing trends in the general Powerlifting population
+### [General Trends](https://github.com/SamPurle/Powerlifting/blob/master/Plotting.py)
 
 After data cleaning and calculating the Elapsed Time since competitors' first Meets, it is possible to plot the general trajectories followed by individuals over the course of their competitive careers. It would be interesting to identify an inflexion point where the positive impact of Training Age begins to be surpassed by the negative impact of biological aging, although unfortunately there is insufficient information relating to biological age within the dataset. Only data on Age Class is present, which is not specific enough to be useful for this purpose (the 24-39 year old "Senior" class is far too wide to be able to identify any meaningful trend).
 
@@ -135,7 +134,6 @@ This overview can be further broken down by showing the distributions of each in
 
 
 #### Takeaways
-##### An example of how this information can be used
 
 The above plots help quantify what I already suspected: my Squat is by far my biggest competitive advantage, which I would benefit from leveraging by placing other competitors on the back foot after the first event within a competition.
 
@@ -171,5 +169,14 @@ To generate this distribution it was necessary to make use of the mathematical "
 The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. I plan to introduce functionality to allow input from site visitors.
 
 ### [Lift dependency](https://github.com/SamPurle/PowerProject/blob/master/LiftDependency.py)
+#### Weight Class
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/M_Dependency.png">
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/F_Dependency.png">
+{: refdef}
 
 ### Final thoughts
