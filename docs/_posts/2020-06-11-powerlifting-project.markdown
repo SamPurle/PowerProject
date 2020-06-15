@@ -170,4 +170,6 @@ To generate this distribution it was necessary to make use of the mathematical "
 
 The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. I plan to introduce functionality to allow input from site visitors.
 
+### [Lift dependency](https://github.com/SamPurle/PowerProject/blob/master/LiftDependency.py)
+
 ### Final thoughts
