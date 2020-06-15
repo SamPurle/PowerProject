@@ -35,7 +35,7 @@ The OpenPowerlifting dataset is community-maintained, with a variety of differen
 
 The presence of many different federations within the raw data has the consequence that competitors do not have a Unique ID tied to them, and can only be identified by name. As such, detection of individual competitors is entirely dependent on the name they elected to use while entering any given competition. As an example of this I appear as two distinct competitors within the dataset: as Samuel Purle on 2019-04-06, and then as Sam Purle on 2020-01-26. This will introduce a degree of noise into the raw data, the removal of which I do not believe to be possible without the use of extensive and complex string operations. Even subsequent to this, the issue would not be entirely alleviated due to the presence of competitors from many different countries and cultures within the data - where naming conventions differ substantially from those in the West.
 
-
+### [Growth of the sport](https://github.com/SamPurle/PowerProject/blob/master/GrowthModelling.py)
 ### Visualisation
 #### Showing trends in the general Powerlifting population
 
