@@ -68,7 +68,8 @@ A lifter's Total is generally their primary competitive goal - to lift the highe
 {: refdef}
 
 
-- Both sexes see a significant increase in Total over the first couple of years of competing. This plateaus in Men after ~2 years of competing, but continues to increase marginally in Women until ~6 years into competing. Both sexes see a significant drop in absolute strength after 8 years or more of competing, presumably as the effects of biological aging outpace the improvements made with increased training age.
+- Both sexes see a significant increase in Total over the first couple of years of competing. This plateaus in Men after ~2 years of competing, but continues to increase marginally in Women until ~6 years into competing.
+- Both sexes see a significant drop in absolute strength after 8 years or more of competing, presumably as the effects of biological aging outpace the improvements made with increased training age.
 
 
 
