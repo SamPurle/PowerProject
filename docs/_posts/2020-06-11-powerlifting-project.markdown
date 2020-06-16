@@ -190,7 +190,7 @@ Both Men and Women have a limit on the mass of muscle they are able to carry upo
 #### Years competing
 
 
-  ![alt-text-1](<img src="{{site.url}}/{{site.baseurl}}/assets/M_AgeDependency.png">) ![alt-text-2](img src="{{site.url}}/{{site.baseurl}}/assets/F_AgeDependency.png")
+  ![alt-text-1](assets/M_AgeDependency.png) ![alt-text-2](assets/F_AgeDependency.png)
 
 
 
