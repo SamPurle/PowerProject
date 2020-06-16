@@ -240,4 +240,4 @@ Originally I had planned to use the data to develop a complex time-series Machin
 
 #### Changes
 
-If I were to repeat this project, I would think more carefully about the structure of my code-base. Part-way through I found that I had to re-structure my code to make things modular and modify individual functions, which I consider to be a beginner's error. I would also be more careful to plan out the questions to be answered from the outset, so that work could be done chronologically/in a logical order. However, I found that I came up with many new questions as I became more familiar with the dataset.
+If I were to repeat this project I would think more carefully about the structure of my code-base. Part-way through I found that I had to re-structure my code to make things modular to allow modification of individual functions, which I consider to be a beginner's error. I would also be more careful to plan out the questions to be answered from the outset, so that work could be done chronologically/in a logical order. However, I found that I came up with many new questions as I became more familiar with the dataset.
