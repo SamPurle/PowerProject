@@ -102,7 +102,9 @@ It is relatively commonplace for lifters to undertake the decision to move towar
 
 - Male lifters tend to put on 5-10kg of weight in their first 2-4 years of competing. Average body-weight in Men continues to increase after their Total plateaus, which explains Men's Wilks scores peaking much earlier than Women's.
 
-- Bodyweight of Female lifters doesn't change significantly over the course of their competitive careers, aside from a slight decrease towards the end. Although a social scientist would be better equipped to explain this, this could either be due to Women being more disciplined on average in terms of maintaining a low body fat percentage, or being less willing to put on weight to chase after a perceived competitive advantage.
+- Bodyweight of Female lifters doesn't change significantly over the course of their competitive careers, aside from a slight decrease towards the end.
+
+Although a social scientist would be better equipped to explain this, this could either be due to Women being more disciplined on average in terms of maintaining a low body fat percentage, or being less willing to put on weight to chase after a perceived competitive advantage.
 
 ### [Lift Analysis](https://github.com/SamPurle/PowerProject/blob/master/LiftAnalysis.py)
 #### Comparison with the wider community
@@ -227,6 +229,7 @@ This is of no particular surprise. The muscle groups and motion patterns involve
 
 #### Positives
 
+I'm very happy that the level of difficulty of this project was appropriate for my skill level. I did not have to acquire much new knowledge for the tasks that I wanted to accomplish - instead I found myself applying existing knowledge in new ways. There are some exceptions to this: I was not aware of the "groupby" function within Pandas, and had never built a K-Means clustering model prior to this.
 
 #### Limitations
 
@@ -236,4 +239,4 @@ Originally I had planned to use the data to develop a complex time-series Machin
 
 #### Changes
 
-If I were to repeat this project,
+If I were to repeat this project, I would think more carefully about the structure of my code-base. Part-way through I found that I had to re-structure my code to make things modular and modify individual functions, which I consider to be a beginner's error. I would also be more careful to plan out the questions to be answered from the outset, so that work could be done chronologically/in a logical order. However, I found that I came up with many new questions as I became more familiar with the dataset.
