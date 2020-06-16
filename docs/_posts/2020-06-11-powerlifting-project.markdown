@@ -203,27 +203,27 @@ For both Men and Women there are slight but sustained variations in their depend
 
 As mentioned earlier, the amount of weight an individual is able to lift is dependent on a wide variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
 
-To investigate the relationship between two lifts, there are many factors that must be controlled for. An individual with an impressive Squat in absolute terms will probably also have an impressive Deadlift, as the lower body strength involved in one will generally carry over to the other. Consequently, it is not useful to analyse correlations in the absolute masses of the lifts. I chose to investigate this phenomena as follows:
+Demonstrating these relationships was not an easy task. Simply plotting the correlation between one lift and another produced a false positive correlation: as stronger athletes will generally perform well across all three lifts. Conversely, plotting lifts as a percentage of Total against each other produced a false negative correlation: as the combined percentage must always sum to 100%.
 
- - Group by the lift that is not being investigated (to control for the effect of overall strength)
- - Calculate the impact of the other two lifts, as a percentage of Total
- - Plot the results
-
- Using this technique, information can be gathered from competitors with a wide range of Totals. The resulting trends will illustrate correlations solely based on the interaction between the two lifts being investigated:
+I decided to instead plot the percentiles on which athletes lie for each lift against each other. If no correlation exists between the lifts then a 1:1 relationship should be observed: an athlete whose Squat lies on the 50th percentile should have a Bench Press that also lies on the 50th percentile, and so forth. Deviations from this expected trend show that the factors that make an athlete strong in one lift simultaneously detract from their performance in another.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Bench-Deadlift.png">
 {: refdef}
 
+The observed trend between the Bench Press and Deadlift should be no surprise to competitors in Powerlifting. The primary reason for this is likely due to the conflicting impact of arm length. Long arms allow a competitor to set-up in a more upright and mechanically strong position during the Deadlift, but simultaneously create a greater turning force at the shoulder during the Bench Press which the athlete must overcome.
+
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Squat-Deadlift.png">
 {: refdef}
+
+This relationship is almost a direct 1:1 correlation between the two lower-body centric lifts. The Squat and the Deadlift utilise many of the same muscle groups, and so strength in one is highly likely to carry over to the other.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Squat-Bench.png">
 {: refdef}
 
-This is of no particular surprise. The muscle groups and motion patterns involved in the Squat and Bench Press are relatively distinct from one another.
+There appears to be a slight counter-correlation between the Squat and the Bench Press. From personal experience, I believe it is possible that athletes that have relatively strong lower bodies may choose to focus their training upon the Squat and Deadlift leading to their Bench Press lagging behind their other lifts.  
 
 ### Final thoughts
 
