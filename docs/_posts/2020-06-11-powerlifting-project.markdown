@@ -44,7 +44,7 @@ Powerlifting as a sport has experienced rapid growth over recent years. There ar
 
 It will be intesting to see the impact which the Covid-19 pandemic has upon the influx of new competitors to thee sport.
 
-### [General Trends](https://github.com/SamPurle/Powerlifting/blob/master/Plotting.py)
+### [General Trends](https://github.com/SamPurle/PowerProject/blob/master/Plotting.py)
 
 After data cleaning and calculating the Elapsed Time since competitors' first Meets, it is possible to plot the general trajectories followed by individuals over the course of their competitive careers. It would be interesting to identify an inflexion point where the positive impact of Training Age begins to be surpassed by the negative impact of biological aging, although unfortunately there is insufficient information relating to biological age within the dataset. Only data on Age Class is present, which is not specific enough to be useful for this purpose (the 24-39 year old "Senior" class is far too wide to be able to identify any meaningful trend).
 
@@ -152,7 +152,7 @@ In order to predict placing at an upcoming competition, it would be useful to be
 Currently this model is a proof-of-concept, and is not functional in a particularly meaningful way. I am relatively unfamiliar with using unlabelled data, and as such this is my first attempt at a clustering model. I considered approaching this problem by developing a Random Forest Classifier and providing a small list of labelled Competitions that could be extrapolated to the dataset as whole. However, my current plan is to think more carefully about parameter selection to be able to develop a clustering model with more distinct separation between competitions.
 
 
-### [Performance Predictor](https://github.com/SamPurle/Powerlifting/blob/master/PerformancePredictor.py)
+### [Performance Predictor](https://github.com/SamPurle/PowerProject/blob/master/PerformancePredictor.py)
 #### A tool to predict competitive performance
 
 Even for lifters that enter competitions with their own self-determined goals other than placing, it is useful to be able to approximate where they are likely to fall within the Meet's rankings. Information on where a lifter's total falls within the general population's distribution can be combined with a description of the level of the meet and labels from the clustering algorithm above. This can be used to calculate the percentile on which a competitor falls among historical competitive performances from lifters in their weight class competing at their level. A probability distribution can then be generated based on the number of confirmed competitors attending an upcoming meet.
@@ -176,9 +176,9 @@ The plot above shows my predicted placing amongst a competition consisting of tw
 <img src="{{site.url}}/{{site.baseurl}}/assets/F_Dependency.png">
 {: refdef}
 
-### Lift correlations
+### [Lift correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
 
-As mentioned earlier, the amount of weight an individual is able to lift is dependent on a large variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
+As mentioned earlier, the amount of weight an individual is able to lift is dependent on a wide variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
 
 To investigate the relationship between two lifts, there are many factors that must be controlled for. An individual with an impressive Squat (kg) will probably also have an impressive Deadlift (kg), as the lower body strength involved in one will generally carry over to the other. Consequently, it is not useful to analyse correlations in the absolute masses of the lifts. I chose to investigate this phenomena as follows:
 
