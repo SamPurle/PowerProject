@@ -13,7 +13,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import rankdata as rank
-import math
+import numpy as np
 
 sns.set_style('darkgrid')
 
