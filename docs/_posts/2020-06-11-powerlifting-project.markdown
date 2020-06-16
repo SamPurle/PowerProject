@@ -179,7 +179,7 @@ It is notable that the reliance upon the Deadlift decreases with increasing body
 
 In Men, the decrease in dependency upon the Deadlift is made up for with both the Squat and the Bench Press. In Women however, this decrease is only accounted for with an increase in the Squat. It is theorised that a larger torso and stomach may produce a "bounce" out of the bottom of the Squat in heavier athletes, which would go some way to explaining the observed phenomenon.
 
-Both Men and Women have a limit on the mass of muscle they are able to carry upon their frames, without the use of performance enhancing drugs. This is generally governed by the individual's Myostatin concentrations within the body. It is possible that this prevents Women from carrying excessive amounts of muscle around their upper bodies, as the may have proved to be an evolutionary disadvantage throughout the majority of mankind's history. This is purely speculative to explain the observed trends - I plan to carry out further research to better understand this. 
+Both Men and Women have a limit on the mass of muscle they are able to carry upon their frames, without the use of performance enhancing drugs. This is generally governed by the individual's Myostatin concentrations within the body. It is possible that this prevents Women from carrying excessive amounts of muscle around their upper bodies, as this may have proved to be an evolutionary disadvantage throughout the majority of mankind's history. This is purely speculative to explain the observed trends - I plan to carry out further research to better understand this.
 
 ### [Lift correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
 
@@ -206,3 +206,16 @@ To investigate the relationship between two lifts, there are many factors that m
 {: refdef}
 
 ### Final thoughts
+
+#### Positives
+
+
+#### Limitations
+
+In truth, I do not believe Python libraries to be the ideal visualisation tool for this project. Other technologies would be capable of presenting the data more legibly, and potentially adding a degree of interactivity. This being said, they are a very powerful tool which can be used to visualise basic trends, and can be used easily during data processing.
+
+Originally I had planned to use the data to develop a complex time-series Machine Learning model: capable of predicting the performance trajectory of a competitor over their career. However, there was insufficient data for this purpose, as on average each competitor had only completed 2-3 registered competitions. This explains my inclusion of the clustering model: despite its limited utility I wanted to implement some form of Machine Learning into my project which could impact the visualisations and insights generated.
+
+#### Changes
+
+If I were to repeat this project,
