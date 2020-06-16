@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Powerlifting Data Analysis"
-date:   2020-06-11 11:22:55 +0100
+date:   2020-06-16 21:47:55 +0100
 categories: project upload
 ---
 
@@ -15,12 +15,12 @@ With the spare time I have available as a result of the Covid-19 induced lockdow
 For this project I wanted to make use of the [OpenPowerlifting](https://www.openpowerlifting.org/) dataset, for the purposes of Exploratory Data Analysis,
 rudimentary visualisations, and facilitate comparison between an individual's competitive performance and the wider Powerlifting community. Functionality that I have currently implemented includes:
 
- - **Data Cleaning:** Processing the raw .csv file into a more usable Information
+ - **Data Cleaning:** Processing the raw .csv file into a more usable format
  - **Growth Modelling:** An illustration of how the number of unique competitors has changed over recent years
  - **General Trends:** Plotting trajectories of Total (a metric for absolute strength), Wilks score (a metric for relative strength) and Bodyweight over the course of individuals' competitive careers
  - **Lift Analysis:** Allowing an individual to identify where their individual lifts stand relative to the wider community, both in terms of percentile and variation from the respective means
  - **Competition Classification:** Basic use of a Machine Learning Clustering model to classify competitions into Regional, National, and International meets
- - **Performance Prediction:** Allowing a user to determine their likely placing at an upcoming competition based on historical data, or retroactively assess the standard of competition at a past meets
+ - **Performance Prediction:** Allowing a user to determine their likely placing at an upcoming competition based on historical data, or retroactively assess the standard of competition at a past meet
  - **Lift Dependency:** An investigation as to how athletes' dependence on the different lifts that constitute their Total varies with Bodyweight and Training Age
  - **Lift Correlations:** Visualisation of the inter-dependence of the different lifts
 
@@ -39,7 +39,7 @@ The OpenPowerlifting dataset is community-maintained, with a variety of differen
 
 The presence of many different federations within the raw data has the consequence that competitors do not have a Unique ID tied to them, and can only be identified by name. As such, detection of individual competitors is entirely dependent on the name they elected to use while entering any given competition. As an example of this I appear as two distinct competitors within the dataset: as Samuel Purle on 2019-04-06, and then as Sam Purle on 2020-01-26. This will introduce a degree of noise into the raw data, the removal of which I do not believe to be possible without the use of extensive and complex string operations. Even subsequent to this, the issue would not be entirely alleviated due to the presence of competitors from many different countries and cultures within the data - where naming conventions differ substantially from those in the West.
 
-### [Growth of the sport](https://github.com/SamPurle/PowerProject/blob/master/GrowthModelling.py)
+### [Growth of Powerlifting](https://github.com/SamPurle/PowerProject/blob/master/GrowthModelling.py)
 
 Powerlifting as a sport has experienced rapid growth over recent years. There are likely a multitude of reasons for this. One of which has been the growing popularity of "Raw" lifting as opposed to the original "Equipped" lifting, which has resulted in the sport becoming more accessible to the gym-going population. Additionally, health and fitness has become a prominent subject on a variety of social media platforms (most notably Instagram and YouTube), which has resulted in greater awareness of the sport.
 
@@ -47,11 +47,11 @@ Powerlifting as a sport has experienced rapid growth over recent years. There ar
 <img src="{{site.url}}/{{site.baseurl}}/assets/SportGrowth.png">
 {: refdef}
 
-It will be intesting to see the impact which the Covid-19 pandemic has upon the influx of new competitors to thee sport.
+It will be interesting to see the impact which the Covid-19 pandemic has upon the influx of new competitors to the sport.
 
 ### [General Trends](https://github.com/SamPurle/PowerProject/blob/master/Plotting.py)
 
-After data cleaning and calculating the Elapsed Time since competitors' first Meets, it is possible to plot the general trajectories followed by individuals over the course of their competitive careers. It would be interesting to identify an inflexion point where the positive impact of Training Age begins to be surpassed by the negative impact of biological aging, although unfortunately there is insufficient information relating to biological age within the dataset. Only data on Age Class is present, which is not specific enough to be useful for this purpose (the 24-39 year old "Senior" class is far too wide to be able to identify any meaningful trend).
+After data cleaning and calculating the Elapsed Time since competitors' first Meets, it is possible to plot the general trajectories followed by individuals over the course of their competitive careers. I originally planned to identify an inflexion point where the positive impact of Training Age begins to be surpassed by the negative impact of biological aging, although unfortunately there is insufficient information relating to biological age within the dataset. Only data on Age Class is present, which is not specific enough to be useful for this purpose (the 24-39 year old "Senior" class is far too wide to be able to identify any meaningful trend).
 
 The three metrics I wish to investigate are:
 
@@ -94,7 +94,7 @@ The fact the Women have a lower initial Wilks could be due to unfairly calculate
 
 #### Bodyweight
 
-It is relatively commonplace for lifters to undertake the decision to move towards higher weight classes as they progress in their lifting careers. This is in part a by-product of the natural propensity to gain muscle through resistance training, but also due to phenomenon that lifters will generally become more competitive as they gain body mass. An analysis of the biomechanics involved shows that - all other things being equal - taller lifters have to generate more force with a smaller mass of muscle to lift an equivalent weight as a shorter, stockier competitor. Consequently, in order to maximise their competitive potential a lifter should aim to be the shortest, heaviest lifter in their weight class.
+It is relatively commonplace for lifters to undertake the decision to move towards heavier weight classes as they progress in their lifting careers. This is in part a by-product of the natural propensity to gain muscle through resistance training, but also due to phenomenon that lifters will generally become more competitive as they gain body mass. An analysis of the biomechanics involved shows that - all other things being equal - taller lifters have to generate more force with a smaller mass of muscle to lift an equivalent weight as a shorter, stockier competitor. Consequently, in order to maximise their competitive potential a lifter should aim to be the shortest, heaviest lifter in their weight class.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/BodyweightPlot.png">
@@ -140,9 +140,9 @@ This overview can be further broken down by showing the distributions of each in
 
 The above plots help quantify what I already suspected: my Squat is by far my biggest competitive advantage, which I would benefit from leveraging by placing other competitors on the back foot after the first event within a competition.
 
-Despite substantial effort on my part, my Bench Press continues to be a competitive weak-point. I believe this is primarily due to past injury and naturally long arms relative to my height - which causes a loaded barbell to create a greater turning moment at my shoulder. I also plan to investigate the hypothesis that lighter lifters (such as myself) are much more lower-body dependent the heavier lifters. My natural leaning towards lower-body strength limits the amount of muscle I can carry around my torso while staying in the lighter weight classes. As such, I expect to see an improvement in the competitiveness of my Bench Press as I move up in Weight Class and the effect of this limitation is mitigated.
+Despite substantial effort on my part, my Bench Press continues to be a competitive weak-point. I believe this is primarily due to past injury and naturally long arms relative to my height - which causes a loaded barbell to create a greater turning moment at my shoulder. My natural leaning towards lower-body strength limits the amount of muscle I can carry around my torso while staying in the lighter weight classes. As such, I expect to see an improvement in the competitiveness of my Bench Press as I move up in Weight Class and the effect of this limitation is mitigated.
 
-My Deadlift is marginally stronger than other competitive lifters in my weight class. I believe the lower body strength that provides the foundation for my Squat to be the primary reason for this. Moving forwards, I plan to capitalise on this strength by continuing to develop my "Sumo" Deadlift technique - which differs substantially from my current "Conventional" technique and relies on many of the same muscle groups as the Squat.
+My Deadlift is marginally stronger than other competitive lifters in my weight class. I believe the lower body strength that provides the foundation for my Squat to be the primary reason for this. Moving forwards, I plan to capitalise on this strength by continuing to develop my "Sumo" Deadlift technique - which differs substantially from my current "Conventional" technique and is generally considered to increase involvement of the quadriceps, which are also a large component of the Squat movement.
 
 ### [Clustering](https://github.com/SamPurle/PowerProject/blob/master/ClusteringModel.py)
 #### A Machine Learning model to classify Competitions
@@ -170,7 +170,7 @@ To generate this distribution it was necessary to make use of the mathematical "
 
 The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. Based on past experience this appears to be a relatively accurate prediction.
 
-### [Lift dependency](https://github.com/SamPurle/PowerProject/blob/master/LiftDependency.py)
+### [Lift Dependency](https://github.com/SamPurle/PowerProject/blob/master/LiftDependency.py)
 #### Weight Class
 
 {:refdef: style="text-align: center;"}
@@ -199,13 +199,13 @@ Both Men and Women have a limit on the mass of muscle they are able to carry upo
 
 For both Men and Women there are slight but sustained variations in their dependence on the different lifts: a decrease in reliance upon the Deadlift and an increase in reliance upon the Bench Press. I would argue that this is likely due to the fact that the Conventional Deadlift is probably the least technical lift within Powerlifting, whereas the Bench Press is generally considered to be the most technical. All lifts are likely to increase over time as an athlete gains strength. However the Bench Press is likely to benefit disproportionately as an athlete also develops in skill, whereas this effect is likely to be less prominent in the Deadlift.
 
-### [Lift correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
+### [Lift Correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
 
 As mentioned earlier, the amount of weight an individual is able to lift is dependent on a wide variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
 
 Demonstrating these relationships was not an easy task. Simply plotting the correlation between one lift and another produced a false positive correlation: as stronger athletes will generally perform well across all three lifts. Conversely, plotting lifts as a percentage of Total against each other produced a false negative correlation: as the combined percentage must always sum to 100%.
 
-I decided to instead plot the percentiles on which athletes lie for each lift against each other. If no correlation exists between the lifts then a 1:1 relationship should be observed: an athlete whose Squat lies on the 50th percentile should have a Bench Press that also lies on the 50th percentile, and so forth. Deviations from this expected trend show that the factors that make an athlete strong in one lift simultaneously detract from their performance in another.
+I decided to instead plot the percentiles on which athletes lie for each lift against each other. If no inverse correlation exists between the lifts then a 1:1 relationship should be observed: an athlete whose Squat lies on the 50th percentile should have a Bench Press that also lies on the 50th percentile, and so forth. Deviations from this expected trend show that the factors that make an athlete strong in one lift simultaneously detract from their performance in another.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Bench-Deadlift.png">
@@ -225,7 +225,7 @@ This relationship is almost a direct 1:1 correlation between the two lower-body 
 
 There appears to be a slight counter-correlation between the Squat and the Bench Press. From personal experience, I believe it is possible that athletes that have relatively strong lower bodies may choose to focus their training upon the Squat and Deadlift leading to their Bench Press lagging behind their other lifts.  
 
-### Final thoughts
+### Final Thoughts
 
 #### Positives
 
