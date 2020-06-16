@@ -24,12 +24,13 @@ rudimentary visualisations, and facilitate comparison between an individual's co
  - **Lift Dependency:** An investigation as to how athletes' dependence on the different lifts that constitute their Total varies with Bodyweight and Training Age
  - **Lift Correlations:** Visualisation of the inter-dependence of the different lifts
 
-Functionality that I wish to introduce or improve upon includes:
+Things that I wish to introduce or improve upon includes:
 
  - **Growth Projections:** Develop a mathematical model to predict future growth of the sport under normal circumstances
  - **Refining the Machine Learning model:** Produce more accurate classifications with a more sophisticated model
  - **Allow visitor input:** Allow users to predict placing and analyse the competitiveness of their own lifts
- 
+ - **Formatting:** Make things more concise, legible, and visually appealing
+
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
 
 ### [Data Cleaning](https://github.com/SamPurle/PowerProject/blob/master/Cleaning.py)
@@ -93,12 +94,11 @@ The fact the Women have a lower initial Wilks could be due to unfairly calculate
 
 #### Bodyweight
 
-It is relatively commonplace for lifters to undertake the decision to move towards higher weight classes as they progress in their lifting careers. This is in part a by-product of the natural propensity to gain muscle through resistance training, but also due to phenomenon that lifters will generally become more competitive as they gain body mass. An analysis of the biomechanics involved shows that - all other things being equal - taller lifters have to generate more force with a smaller mass of muscle to lift an equivalent weight as a shorter, stockier competitor.
+It is relatively commonplace for lifters to undertake the decision to move towards higher weight classes as they progress in their lifting careers. This is in part a by-product of the natural propensity to gain muscle through resistance training, but also due to phenomenon that lifters will generally become more competitive as they gain body mass. An analysis of the biomechanics involved shows that - all other things being equal - taller lifters have to generate more force with a smaller mass of muscle to lift an equivalent weight as a shorter, stockier competitor. Consequently, in order to maximise their competitive potential a lifter should aim to be the shortest, heaviest lifter in their weight class.
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/BodyweightPlot.png">
 {: refdef}
-
 
 - Male lifters tend to put on 5-10kg of weight in their first 2-4 years of competing. Average body-weight in Men continues to increase after their Total plateaus, which explains Men's Wilks scores peaking much earlier than Women's.
 
@@ -153,8 +153,7 @@ In order to predict placing at an upcoming competition, it would be useful to be
 <img src="{{site.url}}/{{site.baseurl}}/assets/ClusterPlot.png">
 {: refdef}
 
-Currently this model is a proof-of-concept, and is not functional in a particularly meaningful way. I am relatively unfamiliar with using unlabelled data, and as such this is my first attempt at a clustering model. I considered approaching this problem by developing a Random Forest Classifier and providing a small list of labelled Competitions that could be extrapolated to the dataset as whole. However, my current plan is to think more carefully about parameter selection to be able to develop a clustering model with more distinct separation between competitions.
-
+Above is a representation of how the model works, and is not indicative of its actual parameters and classifications. The model currently in place uses more than 2 parameters to generate predictions, and so cannot easily be visualised in a 2D plot. I originally considered approaching this problem by developing a Random Forest Classifier and providing a small list of labelled Competitions that could be extrapolated to the dataset as whole. However, providing a small training set would produce large inaccuracies, whereas generating a large training set would be very labour-intensive.
 
 ### [Performance Predictor](https://github.com/SamPurle/PowerProject/blob/master/PerformancePredictor.py)
 #### A tool to predict competitive performance
@@ -167,7 +166,7 @@ To generate this distribution it was necessary to make use of the mathematical "
 <img src="{{site.url}}/{{site.baseurl}}/assets/PlacingPlot.png">
 {: refdef}
 
-The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. I plan to introduce functionality to allow input from site visitors.
+The plot above shows my predicted placing amongst a competition consisting of twelve 74kg lifters at a Regional level, based on my pre-lockdown lifts. Based on past experience this appears to be a relatively accurate prediction.
 
 ### [Lift dependency](https://github.com/SamPurle/PowerProject/blob/master/LiftDependency.py)
 #### Weight Class
@@ -221,6 +220,8 @@ To investigate the relationship between two lifts, there are many factors that m
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Squat-Bench.png">
 {: refdef}
+
+This is of no particular surprise. The muscle groups and motion patterns involved in the Squat and Bench Press are relatively distinct from one another.
 
 ### Final thoughts
 

@@ -18,7 +18,7 @@ sns.set_style('darkgrid')
 
 # Load data
 
-from Cleaning import df
+df = pd.read_csv('D:/Datasets/Powerlifting/CleanedData.csv')
 
 df = df.join(df.groupby(['Name']).MeetCountry.agg(pd.Series.nunique), on = 'Name', 
              how = 'left', rsuffix = 'Count') 
@@ -31,15 +31,12 @@ df['Nationality'].replace(to_replace = {'England' : 'UK',
                                         'Scotland' : 'UK'}, inplace = True)
 df.loc[df['Nationality'].str.len() > 1, 'MeetCountryMode'] = df['Nationality']
 
-df['ElapsedTime'] = df['ElapsedTime'].dt.days
-
-
 dfMeet = pd.DataFrame({'CompetitorCount' : df.groupby(['MeetName']).Name.count(),
                        'MedianWilks' : df.groupby(['MeetName']).Wilks.median(),
                        'MaxWilks' : df.groupby(['MeetName']).Wilks.max(),
                        'MeanCountries' : df.groupby(['MeetName']).MeetCountryCount.mean(),
                       'NationalityCount' : df.groupby(['MeetName']).MeetCountryMode.agg(pd.Series.nunique),
-                      'MeanTrainingAge' : df.groupby(['MeetName']).ElapsedTime.mean()                      
+                      'MeanTrainingAge' : df.groupby(['MeetName']).ElapsedDays.mean()                      
                         })
 
 xFeatures = ['MedianWilks', 'NationalityCount','MeanTrainingAge']
@@ -55,4 +52,5 @@ dfMeet['MeetLevel'].replace({0 : 'Beginner',
 
 ClusterPlot = sns.relplot(x = 'MedianWilks', y = 'NationalityCount', 
                           hue = 'MeetLevel', style = 'MeetLevel', data = dfMeet)
+
 plt.show()
