@@ -22,11 +22,8 @@ rudimentary visualisations, and facilitate comparison between an individual's co
 
 Functionality that I wish to implement in the future includes:
 
- - Allow input of user data through an on-site UI
  - Refine the implemented Machine Learning model to produce better predictions
- - Identify how reliance on certain lifts varies through weight classes
  - Illustrate inverse correlations between lifts due to biomechanical advantages and disadvantages
- - Demonstrate and model the rapid growth of the sport
  - Do competitors tend to favour different lifts throughout their careers?
 
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
@@ -177,6 +174,30 @@ The plot above shows my predicted placing amongst a competition consisting of tw
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/F_Dependency.png">
+{: refdef}
+
+### Lift correlations
+
+As mentioned earlier, the amount of weight an individual is able to lift is dependent on a large variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
+
+To investigate the relationship between two lifts, there are many factors that must be controlled for. An individual with an impressive Squat (kg) will probably also have an impressive Deadlift (kg), as the lower body strength involved in one will generally carry over to the other. Consequently, it is not useful to analyse correlations in the absolute masses of the lifts. I chose to investigate this phenomena as follows:
+
+ - Group by the lift that is not being investigated (to control for the effect of overall strength)
+ - Calculate the impact of the other two lifts, as a percentage of Total
+ - Plot the results
+
+The results are shown below:
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/Bench-Deadlift.png">
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/Squat-Deadlift.png">
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/Squat-Bench.png">
 {: refdef}
 
 ### Final thoughts
