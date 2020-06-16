@@ -75,8 +75,8 @@ for S in df['Sex'].unique():
     dfPlot.plot(x = 'YearBin', y = ['Squat ','Bench ','Deadlift '], 
                      kind = 'line')
     
-    plt.title('Plot showing how Lift Dependency varies with Age for {}'.format(SexName))
-    plt.xlabel('Age')
+    plt.title('Plot showing how Lift Dependency varies over time for {}'.format(SexName))
+    plt.xlabel('Years Competing')
     plt.ylabel('Lift as a percentage of Total')
     plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
     plt.legend(loc = 'center left', bbox_to_anchor=(1, 0.5), fancybox = True,

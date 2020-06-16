@@ -181,6 +181,18 @@ In Men, the decrease in dependency upon the Deadlift is made up for with both th
 
 Both Men and Women have a limit on the mass of muscle they are able to carry upon their frames, without the use of performance enhancing drugs. This is generally governed by the individual's Myostatin concentrations within the body. It is possible that this prevents Women from carrying excessive amounts of muscle around their upper bodies, as this may have proved to be an evolutionary disadvantage throughout the majority of mankind's history. This is purely speculative to explain the observed trends - I plan to carry out further research to better understand this.
 
+#### Years competing
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/M_AgeDependency.png">
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+<img src="{{site.url}}/{{site.baseurl}}/assets/F_AgeDependency.png">
+{: refdef}
+
+For both Men and Women there are slight but sustained variations in their dependence on the different lifts: a decrease in reliance upon the Deadlift and an increase in reliance upon the Bench Press. I would argue that this is likely due to the fact that the Conventional Deadlift is probably the least technical lift within Powerlifting, whereas the Bench Press is generally considered to be the most technical. All lifts are likely to increase over time as an athlete gains strength. However the Bench Press is likely to benefit disproportionately as an athlete also develops in skill, whereas this effect is likely to be less prominent in the Deadlift.
+
 ### [Lift correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
 
 As mentioned earlier, the amount of weight an individual is able to lift is dependent on a wide variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
