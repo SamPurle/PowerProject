@@ -45,9 +45,3 @@ for l in lifts:
     plt.savefig('docs/assets/{}-{}.png'.format(dfPlot.columns[0], dfPlot.columns[1]))
     plt.show()
     del dfPlot
-        
-    
-
-    
-        
-

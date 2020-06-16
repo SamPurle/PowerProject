@@ -23,7 +23,6 @@ rudimentary visualisations, and facilitate comparison between an individual's co
 Functionality that I wish to implement in the future includes:
 
  - Refine the implemented Machine Learning model to produce better predictions
- - Illustrate inverse correlations between lifts due to biomechanical advantages and disadvantages
  - Do competitors tend to favour different lifts throughout their careers?
 
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
@@ -176,17 +175,23 @@ The plot above shows my predicted placing amongst a competition consisting of tw
 <img src="{{site.url}}/{{site.baseurl}}/assets/F_Dependency.png">
 {: refdef}
 
+It is notable that the reliance upon the Deadlift decreases with increasing bodyweight for both Men and Women. This may be due to the fact that heavier athletes are likely to be taller than their lighter counterparts, which will place their spine and hips at a less mechanically efficient position to provide the necessary acceleration off the floor during the lift. Furthermore, a wider torso can prohibit effective use of the Sumo Deadlift, and may cause athletes to adopt a wider-than-ideal grip in order to prevent friction between their arms and their larger torsos.
+
+In Men, the decrease in dependency upon the Deadlift is made up for with both the Squat and the Bench Press. In Women however, this decrease is only accounted for with an increase in the Squat. It is theorised that a larger torso and stomach may produce a "bounce" out of the bottom of the Squat in heavier athletes, which would go some way to explaining the observed phenomenon.
+
+Both Men and Women have a limit on the mass of muscle they are able to carry upon their frames, without the use of performance enhancing drugs. This is generally governed by the individual's Myostatin concentrations within the body. It is possible that this prevents Women from carrying excessive amounts of muscle around their upper bodies, as the may have proved to be an evolutionary disadvantage throughout the majority of mankind's history. This is purely speculative to explain the observed trends - I plan to carry out further research to better understand this. 
+
 ### [Lift correlations](https://github.com/SamPurle/PowerProject/blob/master/InverseCorrelations.py)
 
 As mentioned earlier, the amount of weight an individual is able to lift is dependent on a wide variety of factors. Many of these are related to training and nutrition, but bodily proportions and leverages also have a substantial impact on which lifts a competitor will naturally excel at. Leverages that provide an advantage in one lift may prove to be a disadvantage in others.
 
-To investigate the relationship between two lifts, there are many factors that must be controlled for. An individual with an impressive Squat (kg) will probably also have an impressive Deadlift (kg), as the lower body strength involved in one will generally carry over to the other. Consequently, it is not useful to analyse correlations in the absolute masses of the lifts. I chose to investigate this phenomena as follows:
+To investigate the relationship between two lifts, there are many factors that must be controlled for. An individual with an impressive Squat in absolute terms will probably also have an impressive Deadlift, as the lower body strength involved in one will generally carry over to the other. Consequently, it is not useful to analyse correlations in the absolute masses of the lifts. I chose to investigate this phenomena as follows:
 
  - Group by the lift that is not being investigated (to control for the effect of overall strength)
  - Calculate the impact of the other two lifts, as a percentage of Total
  - Plot the results
 
-The results are shown below:
+ Using this technique, information can be gathered from competitors with a wide range of Totals. The resulting trends will illustrate correlations solely based on the interaction between the two lifts being investigated:
 
 {:refdef: style="text-align: center;"}
 <img src="{{site.url}}/{{site.baseurl}}/assets/Bench-Deadlift.png">
