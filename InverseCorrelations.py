@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 from scipy.stats import rankdata as rank
 import math
 
+sns.set_style('darkgrid')
+
 # Load data
 
 df = pd.read_csv('D:/Datasets/Powerlifting/CleanedData.csv')
@@ -80,7 +82,7 @@ for l in lifts:
     
     plt.plot(np.arange(0,100),np.arange(0,100))   
     plt.savefig('docs/assets/{}-{}.png'.format(xLift, yLift))
-        plt.show()
+    plt.show()
     
   
     
