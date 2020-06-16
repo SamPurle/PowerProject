@@ -15,16 +15,21 @@ With the spare time I have available as a result of the Covid-19 induced lockdow
 For this project I wanted to make use of the [OpenPowerlifting](https://www.openpowerlifting.org/) dataset, for the purposes of Exploratory Data Analysis,
 rudimentary visualisations, and facilitate comparison between an individual's competitive performance and the wider Powerlifting community. Functionality that I have currently implemented includes:
 
- - **Visualisation:** Plotting trajectories of Total (a metric for absolute strength), Wilks score (a metric for relative strength) and Bodyweight over the course of individuals' competitive careers
+ - **Data Cleaning:** Processing the raw .csv file into a more usable Information
+ - **Growth Modelling:** An illustration of how the number of unique competitors has changed over recent years
+ - **General Trends:** Plotting trajectories of Total (a metric for absolute strength), Wilks score (a metric for relative strength) and Bodyweight over the course of individuals' competitive careers
  - **Lift Analysis:** Allowing an individual to identify where their individual lifts stand relative to the wider community, both in terms of percentile and variation from the respective means
  - **Competition Classification:** Basic use of a Machine Learning Clustering model to classify competitions into Regional, National, and International meets
  - **Performance Prediction:** Allowing a user to determine their likely placing at an upcoming competition based on historical data, or retroactively assess the standard of competition at a past meets
+ - **Lift Dependency:** An investigation as to how athletes' dependence on the different lifts that constitute their Total varies with Bodyweight and Training Age
+ - **Lift Correlations:** Visualisation of the inter-dependence of the different lifts
 
-Functionality that I wish to implement in the future includes:
+Functionality that I wish to introduce or improve upon includes:
 
- - Refine the implemented Machine Learning model to produce better predictions
- - Do competitors tend to favour different lifts throughout their careers?
-
+ - **Growth Projections:** Develop a mathematical model to predict future growth of the sport under normal circumstances
+ - **Refining the Machine Learning model:** Produce more accurate classifications with a more sophisticated model
+ - **Allow visitor input:** Allow users to predict placing and analyse the competitiveness of their own lifts
+ 
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
 
 ### [Data Cleaning](https://github.com/SamPurle/PowerProject/blob/master/Cleaning.py)
