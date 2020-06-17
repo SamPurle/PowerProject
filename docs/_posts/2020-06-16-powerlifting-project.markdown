@@ -30,6 +30,7 @@ Things that I wish to introduce or improve upon includes:
  - **Refining the Machine Learning model:** Produce more accurate classifications with a more sophisticated model
  - **Allow visitor input:** Allow users to predict placing and analyse the competitiveness of their own lifts
  - **Formatting:** Make things more concise, legible, and visually appealing
+ - **PED Detection:** Investigate how accurately a Machine Learning model could determine the likelihood that a competitor tests positive for PED use, based on their performance
 
  Each heading contains a hyperlink to the underlying Python code, viewable on Github.
 
